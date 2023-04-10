@@ -1,0 +1,47 @@
+#btnUser{
+    width: auto !important;
+    font-weight: 700;
+}
+#btnUser::first-letter{
+    text-transform: uppercase !important;
+}
+
+
+.widthBtnStart{
+    width: 15em;
+    height: 3em;
+}
+
+#divUserNav{
+    text-align: center;
+    background-color: rgb(var(--color-m));
+    color: rgb(var(--color-q));
+}
+#divUserNav>div{
+    display: grid;
+    gap: .1em;
+}
+#linkUser{
+    position: relative;
+    /* width: 100%; */
+    text-decoration: none;
+    text-align: center;
+    padding: .25em;
+    color: antiquewhite;
+}
+#linkUser:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.nivDesblock{
+    background-color: rgb(var(--color-m));
+    color: rgb(var(--color-q));
+    box-shadow: 0 0 2px rgb(var(--color-t));  
+    transition-duration: .75s;
+}
+.nivDesblock:hover{
+    background-color: rgb(var(--color-t));
+    color: rgb(var(--color-m));
+    box-shadow: 0 0 4px rgb(var(--color-t)); 
+    transition-duration: .75s; 
+}

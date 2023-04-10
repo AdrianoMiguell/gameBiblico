@@ -1,0 +1,114 @@
+:root {
+    --color-m: 45, 9, 92;
+    --color-s: 2, 54, 107;
+    --color-t: 221, 119, 119;
+    --color-q: 234, 227, 227;
+}
+
+#test {
+    color: #2d095c;
+    color: rgb(45, 9, 92);
+    color: #20366b;
+    color: rgb(32, 54, 107);
+    color: #dd7777;
+    color: #eae3e3;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* body {
+    overflow: hidden;
+} */
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(ellipse at left, rgb(var(--color-m)), rgb(var(--color-s))), radial-gradient(ellipse at right, transparent, rgb(var(--color-t)));
+    color: rgb(var(--color-q));
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+}
+
+.secMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flex-center-all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    text-decoration: double;
+    transform: translateY(-2em);
+}
+
+.textRealist {
+    color: rgb(var(--color-t));
+    text-shadow: 1px 1px 2px rgb(var(--color-q));
+    font-size: 50pt;
+    font-weight: 1000;
+    letter-spacing: 2pt;
+}
+
+.btnG {
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    padding: 4px 8px;
+    letter-spacing: 1pt;
+}
+
+.btnSimple {
+    background-color: rgb(var(--color-t));
+    box-shadow: 0 0 2px 1px rgb(var(--color-m));
+    color: white;
+    cursor: pointer;
+}
+
+.btnSimple:hover {
+    background-color: rgba(var(--color-t), .95);
+    box-shadow: 0 0 2px 2px rgb(var(--color-m)) inset,
+        0 0 1px rgb(var(--color-t));
+}
+
+.btnRealist {
+    background: radial-gradient(ellipse at 250px 50px,
+            rgb(var(--color-m)), rgb(var(--color-s)));
+    border: none;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 0 2px rgb(var(--color-s)),
+        0 0 0 4px rgb(var(--color-m));
+    border-radius: 5px;
+    color: rgb(var(--color-t));
+    text-shadow: 0 0 1px #000;
+    font-weight: 800;
+    transition-duration: .75s;
+    cursor: pointer;
+}
+
+.btnRealist:hover {
+    background: radial-gradient(ellipse at 250px 50px,
+            rgb(var(--color-m)), rgb(var(--color-s)));
+    transform-style: preserve-3d;
+    box-shadow: 0 0 0 2px rgb(var(--color-m)),
+        0 0 0 4px rgb(var(--color-t));
+    text-shadow: 0 0 2px #000;
+    transition-duration: .75s;
+}
