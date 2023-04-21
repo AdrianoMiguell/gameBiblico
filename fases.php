@@ -1,43 +1,41 @@
 <?php
-
-// echo __DIR__;
 include_once './pages/register_login/verification.php';
-
 include './pages/layouts/geral.php';
-
 ?>
 
 <style>
-    .flex-center-all{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    .flex-center-all {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
 
 <section class="secFases">
-    <?php
-    for ($i = 1; $i <= 7; $i++) :
-    ?>
-        <?php if ($i == ($dados->fase)) : ?>
-            <form method="GET" action="./pages/nivel0<?php echo $i;?>/pergs.php" class="fase">
-                <input type="submit" value="<?php echo $i; ?>" id="fase" class="d-none" name="fase"> </input>
-                <label for="fase" class="faseLabel flex-center-all">
+
+    <form method='POST' action='./pages/nivel/niveis.php' class='d-flex gap-5'>
+        <?php
+        for ($i = 1; $i <= 7; $i++) :
+            if ($i <= ($dados->fase)) : ?>
+                <input type="submit" name="fase" value="<?php echo $i; ?>" id="fase<?php echo $i; ?>" class="block">
+                <label for="fase<?php echo $i; ?>" class="fase flex-center-all">
                     <i class='bi bi-x-diamond-fill'></i>
                     <h2> fase <?php echo $i; ?> </h2>
                 </label>
-            </form>
-
-        <?php else : ?>
-            <div class="fase">
-                <i class='bi bi-x-diamond-fill'></i>
-                <h2> fase <?php echo $i; ?> </h2>
-            </div>
-    <?php
-        endif;
-    endfor;
-    ?>
+            <?php
+                echo $i == $dados->fase ? "</form>" : " ";
+            else : ?>
+                <div class="fase">
+                    <i class='bi bi-x-diamond-fill'></i>
+                    <h2> fase <?php // echo $i; 
+                                ?> </h2>
+                </div>
+        <?php
+            endif;
+        endfor;
+        ?>
+    </form>
 </section>
 
 <script>

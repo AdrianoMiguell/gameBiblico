@@ -112,3 +112,7 @@ a {
     text-shadow: 0 0 2px #000;
     transition-duration: .75s;
 }
+
+.bgGradient{
+    background-color: rgb(var(--color-q));
+}
