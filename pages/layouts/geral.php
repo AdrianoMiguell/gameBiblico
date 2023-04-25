@@ -24,10 +24,12 @@ if (isset($_SESSION['id'])) {
         echo "<link rel='stylesheet' href='././src/css/geral.css'>";
         echo "<link rel='stylesheet' href='././src/css/userPage.css'>";
         echo "<link rel='stylesheet' href='././src/css/niveis.css'>";
+        echo "<link rel='stylesheet' href='././src/css/media.css'>";
         include "./pages/register_login/alerts.php";
     } else {
         echo "<link rel='stylesheet' href='../../src/css/geral.css'>";
         echo "<link rel='stylesheet' href='../../src/css/userPage.css'>";
+        echo "<link rel='stylesheet' href='../../src/css/media.css'>";
         include "../register_login/alerts.php";
 
         if (getcwd() == 'C:\xampp\htdocs\gameBiblico\pages\register_login') {
@@ -39,45 +41,17 @@ if (isset($_SESSION['id'])) {
         }
     }
 
-    // / if (getcwd() == 'C:\xampp\htdocs\gameBiblico') {
-    //     //     // echo "<link rel='stylesheet' href='././src/css/userPage.css'>";
-    
-    //     //     $folderActual = "index";
-    //     //     $folderRegst = "./src/register";
-    //     //     $folderPages = "./pages/register_login";
-    
-    //     // } 
-    
-    
-    //     {
-    //         for ($i = 1; $i <= 7; $i++) {
-    //             if (getcwd() == 'C:\xampp\htdocs\gameBiblico\pages') {
-    //                 echo "<link rel='stylesheet' href='../../src/css/niveis.css'>";
-    //             }
-    //         }
-    
-    //         $folderActual = "insidePages";
-    //         $folderRegst = "../../src/register";
-    //         $folderPages = "../../pages/register_login";
-    
-    //         echo "<link rel='stylesheet' href='../../src/css/geral.css'>";
-    //         echo "<link rel='stylesheet' href='../../src/css/userPage.css'>";
-    //     }
-    
-    
-
     ?>
 
 </head>
 
 <body>
     <main class="p-4">
-        <div class="position-absolute top-0 d-flex justify-content-between align-items-center w-100 p-4">
-            <button class="btnG btnSimple px-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"> <span><i class="bi bi-list"></i></span>
-            </button>
-
+        <div class="position-absolute top-0 d-flex justify-content-end align-items-center w-100 p-4">
             <?php if (!isset($email)) : ?>
-                <a href='<?php echo $folderPages; ?>/login.php' class="inkUser" class='btnG'> login </a>
+                <a href='<?php echo getcwd() == 'C:\xampp\htdocs\gameBiblico' ? "./pages/register_login/login.php" : "../../pages/register_login/login.php"; ?>' class="btnG btnSimple">
+                    <div>login</div>
+                </a>
             <?php else : ?>
                 <div class="btn-group">
                     <button id="btnUser" class="btnG btnSimple" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -85,11 +59,13 @@ if (isset($_SESSION['id'])) {
                     </button>
                     <ul id="divUserNav" class="dropdown-menu">
                         <div>
-                            <div>
-                                <a href='<?php echo $folderRegst; ?>/profile.php' class="inkUser"> profile
-                            </div>
+                            <a href='<?php echo getcwd() == 'C:\xampp\htdocs\gameBiblico' ? "./index.php" : "../../index.php"; ?>' class="inkUser">
+                                <div>home</div>
                             </a>
-                            <a href='<?php echo $folderRegst; ?>/logout.php' class="inkUser">
+                            <a href='<?php echo getcwd() == 'C:\xampp\htdocs\gameBiblico' ? "./src/register/logout.php" : "../../src/register/logout.php"; ?>' class="inkUser">
+                                <div>profile</div>
+                            </a>
+                            <a href='<?php echo getcwd() == 'C:\xampp\htdocs\gameBiblico' ? "./src/register/logout.php" : "../../src/register/logout.php"; ?>/' class="inkUser">
                                 <div>logout</div>
                             </a>
                         </div>
@@ -97,28 +73,3 @@ if (isset($_SESSION['id'])) {
                 </div>
             <?php endif; ?>
         </div>
-
-        <nav class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div>
-                    <?php
-                    if (isset($folderActual) && $folderActual == 'insidePages') :
-                    ?>
-                        <a href="../../index.php">
-                            <h1> Logo </h1>
-                        </a>
-                    <?php
-                    else :
-                    ?>
-                        <h1> Logo </h1>
-                    <?php
-                    endif;
-                    ?>
-                </div>
-                <p>Try scrolling the rest of the page to see this option in action.</p>
-            </div>
-        </nav>

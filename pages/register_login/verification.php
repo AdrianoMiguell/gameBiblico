@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === false) {
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] != true) {
     system_error();
 }
 
@@ -27,23 +27,13 @@ if (isset($_SESSION["id"]) && $_SESSION["email"]) {
 }
 
 
-
-function prevNivel() {
-    
-}
-function nextNivel( $f, $n) {
-
-}
-
 function system_error()
 {
-    alertInfo("Erro no sistema. Se isso persistir, reporte-nos esse bug!");
-    session_destroy();
     if (getcwd() == 'C:\xampp\htdocs\gameBiblico') {
         header("location: ./pages/register_login/login.php");
     } else {
         header("location: ../../pages/register_login./login.php");
     }
-
+    session_destroy();
     exit;
 }

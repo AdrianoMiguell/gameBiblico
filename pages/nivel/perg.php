@@ -3,11 +3,6 @@
 include_once '../register_login/verification.php';
 include '../layouts/geral.php';
 
-
-// if(!isset($_POST['nivel']) ) {
-//     getNivel(number_format($_POST['fase']), $dados->nivel);
-// }
-
 if (isset($_POST['fase']) && isset($_POST['nivel'])) {
     $fase = $_POST['fase'];
     $nivel = $_POST['nivel'];
@@ -23,7 +18,7 @@ $pergs->execute();
 unset($dados);
 
 if (!isset($pergs) || $pergs->rowCount() <= 0) {
-    echo "<h1 class='text-white text-center'> Em breve... </h1>";
+    echo "<h1 class='text-white text-center msg'> Em breve será concluida a fase $fase, e lançado o nivel $nivel... Agradecemos a sua pasciência! </h1>";
     alertInfo("Fase em breve");
     back();
     unset($dados, $result, $pergs, $fase, $nivel);
@@ -33,7 +28,7 @@ if (!isset($pergs) || $pergs->rowCount() <= 0) {
 ?>
 
 <section class="niveis">
-    <div class="d-flex justify-content-around align-items-center my-1 mb-4 bgGradient rounded-1">
+    <div class="d-flex justify-content-around align-items-center my-1 mb-4 rounded-1">
         <span class="fs-2">Fase <?php echo $fase; ?></span>
         <span class="fs-3">
             Nivel <?php echo $nivel; ?>
@@ -70,7 +65,7 @@ if (!isset($pergs) || $pergs->rowCount() <= 0) {
             <input class="d-none" name="nivel" value="<?php echo $nivel; ?>" />
         </form>
     <?php else : ?>
-        <div class="msg"> Em breve... </div>
+        <div class="msg"> Em breve será concluida a fase <?php echo $fase; ?>, e lançado o nivel  <?php echo $nivel; ?> ... </div>
     <?php endif; ?>
 </section>
 

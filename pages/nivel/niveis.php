@@ -22,7 +22,7 @@ while ($s == true) {
 
     if ($existF->execute() && isset($existF) && $existF->rowCount() == 0) {
         if ($i == 1) {
-            echo "<div class='text-center'> Em breve... </div>";
+                echo "<h2 class='text-white text-center fs-3 msg'> Em breve será concluida a fase $fase ... <br> Agradecemos a sua pasciência! </h2>";
             alertInfo('shortly');
             back();
             include_once '../layouts/footer.php';
@@ -36,16 +36,12 @@ while ($s == true) {
     unset($existF);
 }
 
-if ($fase != $_SESSION['fase'] && isset($_SESSION['nivel'])) {
-    $nivAtual = $_SESSION['nivel'];
-} else if ($fase != $_SESSION['fase']) {
+if ($fase != $_SESSION['fase']) {
+    $nivAtual = $totNivels;
+} 
+ else {
     $nivAtual = $dados->nivel;
 }
- else {
-    $nivAtual = $totNivels;
-}
-
-
 ?>
 
 
@@ -85,7 +81,7 @@ if ($fase != $_SESSION['fase'] && isset($_SESSION['nivel'])) {
 
 <script>
     const fase = document.querySelectorAll('.fase');
-    const t = <?php echo ($dados->fase); ?>;
+    const t = <?php echo ($nivAtual); ?>;
 
     for (let i = 0; i < fase.length; i++) {
         if (i < t) {

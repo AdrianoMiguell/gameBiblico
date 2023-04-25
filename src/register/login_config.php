@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validar credenciais
     if(empty($email_err) && empty($password_err)){
         // Prepare uma declaração selecionada
-        $sql = "SELECT id, email, password, fase FROM users WHERE email = :email";
+        $sql = "SELECT id, email, password, fase, nivel FROM users WHERE email = :email";
         
         if($stmt = $pdo->prepare($sql)){
             // Vincule as variáveis à instrução preparada como parâmetros
@@ -49,6 +49,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Verifique se o nome de usuário existe, se sim, verifique a senha
                 if($stmt->rowCount() == 1){
                     if($row = $stmt->fetch()){
+                        
                         $id = $row["id"];
                         $email = $row["email"];
                         $hashed_password = $row["password"];

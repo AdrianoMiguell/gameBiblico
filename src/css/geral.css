@@ -52,10 +52,11 @@ a {
     align-items: center;
 }
 
-.title {
+.mainTitle {
+    display: grid; 
+    translate: 0 -1em;
     text-align: center;
     text-decoration: double;
-    transform: translateY(-2em);
 }
 
 .textRealist {
