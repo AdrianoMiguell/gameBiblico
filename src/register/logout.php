@@ -9,12 +9,13 @@ $_SESSION = array();
 session_destroy();
  
 // Redirecionar para a página de login
-if(getcwd() == 'C:\xampp\htdocs\gameBiblico'){
-    header("location: ./pages/register_login/login.php");
-}
-else{
-    header("location: ../../pages/register_login/login.php");
-}  
+// if(getcwd() == 'C:\xampp\htdocs\gameBiblico'){
+//     echo"verfsdes";
+//     header("location: ./pages/register_login/login.php");
+// }
+// else{
+    header("location: ../../index.php");
+// }  
 
 exit;
 ?>

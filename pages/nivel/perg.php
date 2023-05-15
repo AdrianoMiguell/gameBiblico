@@ -18,7 +18,7 @@ $pergs->execute();
 unset($dados);
 
 if (!isset($pergs) || $pergs->rowCount() <= 0) {
-    echo "<h1 class='text-white text-center msg'> Em breve será concluida a fase $fase, e lançado o nivel $nivel... Agradecemos a sua pasciência! </h1>";
+    echo "ind";
     alertInfo("Fase em breve");
     back();
     unset($dados, $result, $pergs, $fase, $nivel);

@@ -12,7 +12,7 @@ if (getcwd() == 'C:\xampp\htdocs\gameBiblico') {
 }
 
 if (isset($_SESSION["email"]) && $_SESSION["email"] == "admin@gmail.com") {
-    return header('location: ../admin/dados.php');
+    return header('location: ./pages/admin/dados.php');
 }
 
 if (isset($_SESSION["id"]) && $_SESSION["email"]) {

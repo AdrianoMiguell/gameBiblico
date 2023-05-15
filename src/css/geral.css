@@ -29,6 +29,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 2em;
     background: radial-gradient(ellipse at left, rgb(var(--color-m)), rgb(var(--color-s))), radial-gradient(ellipse at right, transparent, rgb(var(--color-t)));
     color: rgb(var(--color-q));
 }
