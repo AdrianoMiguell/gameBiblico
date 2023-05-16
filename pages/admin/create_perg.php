@@ -71,7 +71,7 @@ if (isset($_POST)) {
 
             unset($sql, $row);
 
-            $sql = "INSERT INTO perg(texto, resp1, resp2, resp3, resp4, respTrue, numPerg, dica, fase, nivel) VALUES ('" . $perg . "', '" . $r1 . "', '" . $r1 . "', '" . $r3 . "', '" . $r4 . "', '" . $rTrue . "', '" . $numP . "', '" . $dica . "', '" . $fase . "', '" . $nivel . "')";
+            $sql = "INSERT INTO perg(texto, resp1, resp2, resp3, resp4, respTrue, numPerg, dica, fase, nivel) VALUES ('" . $perg . "', '" . $r1 . "', '" . $r2 . "', '" . $r3 . "', '" . $r4 . "', '" . $rTrue . "', '" . $numP . "', '" . $dica . "', '" . $fase . "', '" . $nivel . "')";
 
             $quest = $pdo->prepare($sql);
             // $quest->execute();

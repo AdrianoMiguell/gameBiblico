@@ -1,4 +1,13 @@
 
+@media screen and (max-width: 680px) {
+    table>tbody{
+        font-size: 10pt;
+    }
+    svg{
+        width: 4px !important;
+        height: 4px !important;
+    }
+}
 /* minimo de 960 px */
 @media screen and (min-width: 960px) {
     .mainTitle{

@@ -1,9 +1,3 @@
-    <footer class="start-0 m-0 mt-4 p-4">
-        <div>
-            Lorem ipsum dolor sit amet, consectetu
-        </div>
-    </footer>
-
     </main>
 
     <?php
@@ -17,7 +11,6 @@
         echo "<script src='../../src/js/events.js'> </script>";
     }
     ?>
-    <script src=""></script>
+    
     </body>
-
-    </html>
+</html>

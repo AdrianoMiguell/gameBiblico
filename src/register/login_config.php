@@ -7,7 +7,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         header("location: ../../fases.php");
     exit;
 }
-exit;
  
 // Incluir arquivo de configuração
 require_once '../../bancoSql/config.php';
