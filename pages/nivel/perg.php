@@ -28,9 +28,9 @@ if (!isset($pergs) || $pergs->rowCount() <= 0) {
 ?>
 
 <section class="niveis">
-    <div class="d-flex justify-content-around align-items-center my-1 mb-4 rounded-1">
-        <span class="fs-2">Fase <?php echo $fase; ?></span>
-        <span class="fs-3">
+    <div class="m-5">
+        <span class="fs-2 position-absolute start-0 ms-5">Fase <?php echo $fase; ?></span>
+        <span class="fs-3 position-absolute end-0 me-5">
             Nivel <?php echo $nivel; ?>
         </span>
     </div>
@@ -64,7 +64,7 @@ if (!isset($pergs) || $pergs->rowCount() <= 0) {
             <input class="d-none" name="fase" value="<?php echo $fase; ?>" />
             <input class="d-none" name="nivel" value="<?php echo $nivel; ?>" />
         </form>
-    <?php else : ?>
+    <?php else : ?> 
         <div class="msg"> Em breve será concluida a fase <?php echo $fase; ?>, e lançado o nivel  <?php echo $nivel; ?> ... </div>
     <?php endif; ?>
 </section>

@@ -1,6 +1,8 @@
 <?php
 // Inicialize a sessão
-session_start();
+if(!isset($_SESSION)) {
+    session_start();
+}
  
 // Verifique se o usuário já está logado, em caso afirmativo, redirecione-o para a página de boas-vindas
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){

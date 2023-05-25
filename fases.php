@@ -14,7 +14,7 @@ include './pages/layouts/geral.php';
 
 <section class="secFases">
 
-    <form method='POST' action='./pages/nivel/niveis.php' class='d-flex gap-5'>
+    <form method='POST' action='./pages/nivel/niveis.php' class='d-flex' style="gap: 5rem;">
         <?php
         for ($i = 1; $i <= 7; $i++) :
             if ($i <= ($dados->fase)) : ?>

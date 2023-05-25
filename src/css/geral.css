@@ -1,44 +1,55 @@
 @import url("./media.css");
 
 :root {
-    --color-m: 45, 9, 92;
-    --color-s: 2, 54, 107;
-    --color-t: 221, 119, 119;
-    --color-q: 234, 227, 227;
+    --color-m: 0, 8, 20;
+    --color-s: 0, 29, 61;
+    --color-t: 0, 53, 102;
+    --color-q: 255, 195, 0;
+    --color-qi: 255, 214, 10;
+    --color-w: 245, 245, 238;
+    --color-b: 34, 34, 35;
 }
 
 #test {
-    color: #2d095c;
-    color: rgb(45, 9, 92);
-    color: #20366b;
-    color: rgb(32, 54, 107);
-    color: #dd7777;
-    color: #eae3e3;
+    color: rgb(0, 8, 20);
+    color: rgb(0, 29, 61);
+    color: rgb(0, 53, 102);
+    color: rgb(255, 195, 0);
+    color: rgb(255, 214, 10);
+    color: rgb(245, 245, 238);
+    color: rgb(34, 34, 35);
 }
 
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    color: rgb(var(--color-w));
 }
 
-/* body {
+body {
     overflow: hidden;
-} */
+    min-width: 100vw;
+    background: radial-gradient(ellipse at left, rgb(var(--color-m)), rgb(var(--color-s))), radial-gradient(ellipse at right, transparent, rgb(var(--color-t)));
+}
 
 main {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2em;
-    background: radial-gradient(ellipse at left, rgb(var(--color-m)), rgb(var(--color-s))), radial-gradient(ellipse at right, transparent, rgb(var(--color-t)));
-    color: rgb(var(--color-q));
+    gap: 2em;    
+    min-height: 100vh;
+    padding: 1rem;
 }
 
 a {
     text-align: center;
     text-decoration: none;
+}
+
+nav{
+    padding: 1rem;
 }
 
 .secMain {
@@ -63,7 +74,7 @@ a {
 }
 
 .textRealist {
-    color: rgb(var(--color-t));
+    color: rgb(var(--color-qi));
     text-shadow: 1px 1px 2px rgb(var(--color-q));
     font-size: 50pt;
     font-weight: 1000;
@@ -100,7 +111,7 @@ a {
     box-shadow: 0 0 0 2px rgb(var(--color-s)),
         0 0 0 4px rgb(var(--color-m));
     border-radius: 5px;
-    color: rgb(var(--color-t));
+    color: rgb(var(--color-w));
     text-shadow: 0 0 1px #000;
     font-weight: 800;
     transition-duration: .75s;
@@ -112,7 +123,7 @@ a {
             rgb(var(--color-m)), rgb(var(--color-s)));
     transform-style: preserve-3d;
     box-shadow: 0 0 0 2px rgb(var(--color-m)),
-        0 0 0 4px rgb(var(--color-t));
+        0 0 0 4px rgb(var(--color-w));
     text-shadow: 0 0 2px #000;
     transition-duration: .75s;
 }

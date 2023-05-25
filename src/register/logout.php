@@ -14,7 +14,7 @@ session_destroy();
 //     header("location: ./pages/register_login/login.php");
 // }
 // else{
-    header("location: ../../index.php");
+    header("location: ../../../index.php");
 // }  
 
 exit;

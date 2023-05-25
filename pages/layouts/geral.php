@@ -1,9 +1,12 @@
 <?php
-if (isset($_SESSION['id'])) {
-    $email = $_SESSION['email'];
-} else {
+
+// Inicialize a sessão
+if(!isset($_SESSION)) {
     session_start();
-    if (isset($_SESSION['id'])) $email = $_SESSION['email'];
+}
+
+if (isset($_SESSION['email']) && !empty($_SESSION['email'])) {
+    $email = $_SESSION['email'];
 }
 ?>
 
@@ -54,20 +57,22 @@ if (isset($_SESSION['id'])) {
                 </a>
             <?php else : ?>
                 <div class="btn-group">
-                    <button id="btnUser" class="btnG btnSimple" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <?php echo $email; ?>
+                    <button id="btnUser" class="btnG btnSimple me-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <?php echo !empty($email) ? $email : "user"; ?>
                     </button>
                     <ul id="divUserNav" class="dropdown-menu">
                         <div>
                             <a href='<?php echo getcwd() == 'C:\xampp\htdocs\gameBiblico' ? "./index.php" : "../../index.php"; ?>' class="inkUser">
                                 <div>home</div>
-                            </a>
+                            </a> 
+                            <?php if(!empty($email)) : ?>
                             <a href='<?php echo getcwd() == 'C:\xampp\htdocs\gameBiblico' ? "./src/register/logout.php" : "../../src/register/logout.php"; ?>' class="inkUser">
                                 <div>profile</div>
                             </a>
                             <a href='<?php echo getcwd() == 'C:\xampp\htdocs\gameBiblico' ? "./src/register/logout.php" : "../../src/register/logout.php"; ?>/' class="inkUser">
                                 <div>logout</div>
                             </a>
+                            <?php endif; ?>
                         </div>
                     </ul>
                 </div>
